@@ -1,0 +1,29 @@
+{
+  "name": "Next.js Boilerplate",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "extensions": [
+        "GitHub.copilot",
+        "EditorConfig.EditorConfig",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "VisualStudioExptTeam.intellicode-api-usage-examples",
+        "formulahendry.auto-rename-tag",
+        "eamodio.gitlens",
+        "GitHub.vscode-pull-request-github",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "christian-kohler.path-intellisense",
+        "streetsidesoftware.code-spell-checker",
+        "YoavBls.pretty-ts-errors",
+        "dsznajder.es7-react-js-snippets",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.js-debug-nightly"
+      ]
+    }
+  }
+}
