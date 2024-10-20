@@ -5,7 +5,7 @@
     "node": true
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "prettier", "tailwindcss"],
+  "plugins": ["@typescript-eslint", "prettier", "tailwindcss", "boundaries"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -17,6 +17,63 @@
   "rules": {
     "prettier/prettier": "error",
     "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
-    "tailwindcss/classnames-order": "off"
+    "tailwindcss/classnames-order": "off",
+    "boundaries/no-unknown": "error",
+    "boundaries/no-unknown-files": "error",
+    "boundaries/element-types": [
+      "error",
+      {
+        "default": "disallow",
+        "rules": [
+          {
+            "from": "app",
+            "allow": ["feature", "shared"]
+          },
+          {
+            "from": "feature",
+            "allow": [
+              "shared",
+              [
+                "feature",
+                {
+                  "featureName": "${from.featureName}"
+                }
+              ]
+            ]
+          },
+          {
+            "from": "shared",
+            "allow": ["shared"]
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "boundaries/include": ["src/**/*"],
+    "boundaries/elements": [
+      {
+        "mode": "full",
+        "type": "app",
+        "pattern": "src/app/**/*"
+      },
+      {
+        "mode": "full",
+        "type": "feature",
+        "capture": ["featureName"],
+        "pattern": "src/features/**/*"
+      },
+      {
+        "mode": "full",
+        "type": "shared",
+        "pattern": [
+          "src/components/**/*",
+          "src/hooks/**/*",
+          "src/lib/**/*",
+          "src/styles/**/*",
+          "src/types/**/*"
+        ]
+      }
+    ]
   }
 }

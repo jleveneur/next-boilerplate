@@ -11,6 +11,7 @@ const config = {
   importOrder: [
     '^(react|next?/?([a-zA-Z/]*))$',
     '<THIRD_PARTY_MODULES>',
+    '^@/features(.*)$',
     '^@/components(.*)$',
     '^@/lib(.*)$',
     '^@/styles(.*)$',
