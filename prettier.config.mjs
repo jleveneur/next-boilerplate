@@ -13,6 +13,7 @@ const config = {
     '<THIRD_PARTY_MODULES>',
     '^@/features(.*)$',
     '^@/components(.*)$',
+    '^@/env(.*)$',
     '^@/lib(.*)$',
     '^@/styles(.*)$',
     '^@/(.*)$',

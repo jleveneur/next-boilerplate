@@ -71,7 +71,8 @@
           "src/hooks/**/*",
           "src/lib/**/*",
           "src/styles/**/*",
-          "src/types/**/*"
+          "src/types/**/*",
+          "src/env/**/*"
         ]
       }
     ]
