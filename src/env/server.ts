@@ -1,5 +1,10 @@
+import { loadEnvConfig } from '@next/env';
 import { createEnv } from '@t3-oss/env-nextjs';
 import { z } from 'zod';
+
+// Load environment variables from .env* files
+const projectDir = process.cwd();
+loadEnvConfig(projectDir);
 
 export const env = createEnv({
   server: {
