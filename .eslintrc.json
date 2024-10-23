@@ -74,6 +74,11 @@
           "src/types/**/*",
           "src/env/**/*"
         ]
+      },
+      {
+        "mode": "full",
+        "type": "neverImport",
+        "pattern": ["src/*"]
       }
     ]
   }
