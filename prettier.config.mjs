@@ -15,6 +15,7 @@ const config = {
     '^@/constants(.*)$',
     '^@/env(.*)$',
     '^@/features(.*)$',
+    '^@/hooks(.*)$',
     '^@/lib(.*)$',
     '^@/styles(.*)$',
     '^@/(.*)$',
