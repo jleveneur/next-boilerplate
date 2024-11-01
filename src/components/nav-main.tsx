@@ -15,14 +15,11 @@ import {
 
 import { MAIN_LINKS } from '@/constants';
 
-import { useIsMobile } from '@/hooks/use-mobile';
-
 import { cn } from '@/lib/utils';
 
 export function NavMain() {
   const pathname = usePathname();
-  const { toggleSidebar } = useSidebar();
-  const isMobile = useIsMobile();
+  const { toggleSidebar, isMobile } = useSidebar();
 
   const handleLinkClick = () => {
     if (isMobile) {
