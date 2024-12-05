@@ -68,11 +68,12 @@
         "type": "shared",
         "pattern": [
           "src/components/**/*",
+          "src/constants/**/*",
+          "src/env/**/*",
           "src/hooks/**/*",
           "src/lib/**/*",
           "src/styles/**/*",
-          "src/types/**/*",
-          "src/env/**/*"
+          "src/types/**/*"
         ]
       },
       {
