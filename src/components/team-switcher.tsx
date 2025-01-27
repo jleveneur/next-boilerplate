@@ -1,8 +1,7 @@
 'use client';
 
-import * as React from 'react';
-
 import { ChevronsUpDown, Frame, Map, PieChart, Plus } from 'lucide-react';
+import * as React from 'react';
 
 import {
   DropdownMenu,

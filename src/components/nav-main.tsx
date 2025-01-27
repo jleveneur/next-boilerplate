@@ -12,9 +12,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar';
-
 import { MAIN_LINKS } from '@/constants';
-
 import { cn } from '@/lib/utils';
 
 export function NavMain() {

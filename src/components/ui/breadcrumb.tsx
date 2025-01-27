@@ -1,8 +1,7 @@
-import Link from 'next/link';
-import * as React from 'react';
-
 import { ChevronRightIcon, DotsHorizontalIcon } from '@radix-ui/react-icons';
 import { Slot } from '@radix-ui/react-slot';
+import Link from 'next/link';
+import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -71,7 +70,7 @@ const BreadcrumbSeparator = ({ children, className, ...props }: React.ComponentP
   <li
     role="presentation"
     aria-hidden="true"
-    className={cn('[&>svg]:w-3.5 [&>svg]:h-3.5', className)}
+    className={cn('[&>svg]:h-3.5 [&>svg]:w-3.5', className)}
     {...props}
   >
     {children ?? <ChevronRightIcon />}
@@ -94,10 +93,10 @@ BreadcrumbEllipsis.displayName = 'BreadcrumbElipssis';
 
 export {
   Breadcrumb,
-  BreadcrumbList,
+  BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
+  BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-  BreadcrumbEllipsis,
 };
