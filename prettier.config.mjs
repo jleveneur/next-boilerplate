@@ -8,22 +8,8 @@ const config = {
   tabWidth: 2,
   trailingComma: 'es5',
   useTabs: false,
-  importOrder: [
-    '^(react|next?/?([a-zA-Z/]*))$',
-    '<THIRD_PARTY_MODULES>',
-    '^@/components(.*)$',
-    '^@/constants(.*)$',
-    '^@/env(.*)$',
-    '^@/features(.*)$',
-    '^@/hooks(.*)$',
-    '^@/lib(.*)$',
-    '^@/styles(.*)$',
-    '^@/(.*)$',
-    '^[./]',
-  ],
-  importOrderSeparation: true,
-  importOrderSortSpecifiers: true,
-  plugins: ['prettier-plugin-tailwindcss', '@trivago/prettier-plugin-sort-imports'],
+  jsxSingleQuote: false,
+  plugins: ['prettier-plugin-tailwindcss'],
 };
 
 export default config;
