@@ -15,7 +15,9 @@
     "drizzle:generate": "drizzle-kit generate",
     "drizzle:migrate": "drizzle-kit migrate",
     "drizzle:studio": "drizzle-kit studio",
-    "type-check": "tsc --noEmit --pretty"
+    "type-check": "tsc --noEmit --pretty",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.10.2",
@@ -46,12 +48,17 @@
     "@commitlint/config-conventional": "^19.6.0",
     "@eslint/compat": "^1.2.5",
     "@eslint/js": "^9.19.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^20",
     "@types/pg": "^8.11.10",
-    "@types/react": "19.0.8",
-    "@types/react-dom": "19.0.3",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
     "@typescript-eslint/eslint-plugin": "^8.8.1",
     "@typescript-eslint/parser": "^8.21.0",
+    "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
@@ -67,13 +74,16 @@
     "eslint-plugin-tailwindcss": "^3.17.5",
     "eslint-plugin-unicorn": "^56.0.1",
     "globals": "^15.14.0",
+    "happy-dom": "^16.7.3",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.10",
     "postcss": "^8.4.47",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^3.4.13",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.0.4"
   },
   "config": {
     "commitizen": {

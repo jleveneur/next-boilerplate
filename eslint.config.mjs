@@ -90,7 +90,7 @@ const config = [
         {
           mode: 'full',
           type: 'neverImport',
-          pattern: ['src/*'],
+          pattern: ['src/tests/**/*', 'src/*'],
         },
       ],
     },
