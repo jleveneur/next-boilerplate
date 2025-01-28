@@ -71,14 +71,15 @@ const SidebarProvider = React.forwardRef<
     const open = openProperty ?? _open;
     const setOpen = React.useCallback(
       (value: boolean | ((value: boolean) => boolean)) => {
+        const openState = typeof value === 'function' ? value(open) : value;
         if (setOpenProperty) {
-          return setOpenProperty?.(typeof value === 'function' ? value(open) : value);
+          setOpenProperty(openState);
+        } else {
+          _setOpen(openState);
         }
 
-        _setOpen(value);
-
         // This sets the cookie to keep the sidebar state.
-        document.cookie = `${SIDEBAR_COOKIE_NAME}=${open}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
+        document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
       },
       [setOpenProperty, open]
     );
