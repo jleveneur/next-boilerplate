@@ -9,10 +9,8 @@ loadEnvConfig(projectDirectory);
 export const env = createEnv({
   server: {
     DATABASE_URL: z.string().url(),
-    CLERK_SECRET_KEY: z.string(),
   },
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
-    CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
   },
 });

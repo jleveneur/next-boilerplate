@@ -1,6 +1,5 @@
 'use client';
 
-import { useAuth } from '@clerk/nextjs';
 import { BadgeCheck, Bell, ChevronsUpDown, CreditCard, LogOut, Sparkles } from 'lucide-react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -29,7 +28,6 @@ export function NavUser({
     avatar: string;
   };
 }) {
-  const { signOut } = useAuth();
   const { isMobile } = useSidebar();
 
   return (
@@ -93,7 +91,7 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => signOut()}>
+            <DropdownMenuItem onClick={() => console.log('Log out')}>
               <LogOut />
               Log out
             </DropdownMenuItem>
