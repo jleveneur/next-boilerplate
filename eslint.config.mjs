@@ -72,7 +72,7 @@ const config = [
           mode: 'full',
           type: 'feature',
           capture: ['featureName'],
-          pattern: 'src/features/**/*',
+          pattern: ['src/features/*/**/*'],
         },
         {
           mode: 'full',
@@ -80,7 +80,6 @@ const config = [
           pattern: [
             'src/components/**/*',
             'src/constants/**/*',
-            'src/env/**/*',
             'src/hooks/**/*',
             'src/lib/**/*',
             'src/styles/**/*',
@@ -111,7 +110,7 @@ const config = [
           default: 'disallow',
           rules: [
             {
-              from: 'app',
+              from: ['app', 'neverImport'],
               allow: ['feature', 'shared'],
             },
             {
