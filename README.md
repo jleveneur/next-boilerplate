@@ -101,15 +101,26 @@ Here are the key scripts to manage the project:
 ├── src/
 │   ├── app/              # Next.js App (App Router)
 │   ├── components/       # Reusable UI components
-│   ├── styles/           # Global styles including Tailwind
+│   ├── constants/        # Constants and enums
+│   ├── features/         # Feature modules
+│   |── hooks/            # Custom hooks
 │   ├── lib/              # 3rd party libraries configuration
-│   └── validations       # Validation schemas
-├── .eslintrc.json        # ESLint configuration
+│   ├── styles/           # Global styles including Tailwind
+│   └── tests/            # Test files
+├── .env.example          # Environment variables example
+├── commitlint.config.ts  # Commitlint configuration
+├── drizzle.config.ts     # Drizzle configuration
+├── eslint.config.mjs     # ESLint configuration
+├── lint-staged.config.mjs # Lint-staged configuration
+├── next.config.ts        # Next.js configuration
+├── package.json          # NPM package configuration
+├── playwright.config.ts  # Playwright configuration
+├── postcss.config.mjs    # PostCSS configuration
 ├── prettier.config.mjs   # Prettier configuration
-├── tailwind.config.ts    # TailwindCSS configuration
-├── README.md             # This README file
+├── sentry.client.config.ts # Sentry configuration
 ├── tailwind.config.ts    # Tailwind CSS configuration
-└── tsconfig.json         # TypeScript configuration
+├── tsconfig.json         # TypeScript configuration
+└── vitest.config.ts      # Vitest configuration
 ```
 
 ### ESLint Configuration

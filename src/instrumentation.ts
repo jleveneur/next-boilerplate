@@ -1,10 +1,12 @@
 import * as Sentry from '@sentry/nextjs';
 
+import { env } from './lib/env';
+
 export async function register() {
-  if (process.env.NEXT_RUNTIME === 'nodejs') {
+  if (env.NEXT_RUNTIME === 'nodejs') {
     Sentry.init({
       // Sentry DSN
-      dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+      dsn: env.NEXT_PUBLIC_SENTRY_DSN,
 
       // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
       tracesSampleRate: 1,
@@ -14,10 +16,10 @@ export async function register() {
     });
   }
 
-  if (process.env.NEXT_RUNTIME === 'edge') {
+  if (env.NEXT_RUNTIME === 'edge') {
     Sentry.init({
       // Sentry DSN
-      dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+      dsn: env.NEXT_PUBLIC_SENTRY_DSN,
 
       // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
       tracesSampleRate: 1,
