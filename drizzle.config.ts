@@ -1,6 +1,6 @@
 import { defineConfig } from 'drizzle-kit';
 
-import { env } from '@/env/server';
+import { env } from '@/lib/env';
 
 export default defineConfig({
   out: './src/lib/drizzle/migrations',
