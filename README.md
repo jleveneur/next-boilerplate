@@ -109,7 +109,6 @@ Here are the key scripts to manage the project:
 │   └── tests/            # Test files
 ├── .env.example          # Environment variables example
 ├── commitlint.config.ts  # Commitlint configuration
-├── drizzle.config.ts     # Drizzle configuration
 ├── eslint.config.mjs     # ESLint configuration
 ├── lint-staged.config.mjs # Lint-staged configuration
 ├── next.config.ts        # Next.js configuration
