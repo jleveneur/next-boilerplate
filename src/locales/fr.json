@@ -1,0 +1,69 @@
+{
+  "LocaleSwitcher": {
+    "label": "Langue",
+    "en": "English",
+    "fr": "Français"
+  },
+  "LoginForm": {
+    "title": "Connexion",
+    "description": "Veuillez entrer votre email ci-dessous pour vous connecter à votre compte.",
+    "email": "Email",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "loading": "Connexion en cours..."
+  },
+  "ModeToggle": {
+    "toggle": "Changer de thème"
+  },
+  "NavMain": {
+    "label": "Application",
+    "dashboard": "Tableau de bord",
+    "users": "Utilisateurs",
+    "products": "Produits"
+  },
+  "NavProjects": {
+    "label": "Projets",
+    "view": "Voir le projet",
+    "share": "Partager le projet",
+    "delete": "Supprimer le projet",
+    "more": "Plus"
+  },
+  "NavUser": {
+    "label": "Utilisateur",
+    "upgrade": "Mettre à niveau",
+    "profile": "Profil",
+    "billing": "Facturation",
+    "notifications": "Notifications",
+    "logout": "Déconnexion"
+  },
+  "TeamSwitcher": {
+    "label": "Équipes",
+    "add": "Ajouter une équipe"
+  },
+  "BreadcrumbEllipsis": {
+    "more": "Plus de navigation"
+  },
+  "SheetContent": {
+    "close": "Fermer"
+  },
+  "SidebarTrigger": {
+    "toggle": "Basculer la barre latérale"
+  },
+  "Dashboard": {
+    "breadcrumb": {
+      "dashboard": "Tableau de bord"
+    }
+  },
+  "Users": {
+    "breadcrumb": {
+      "dashboard": "Tableau de bord",
+      "users": "Utilisateurs"
+    }
+  },
+  "Products": {
+    "breadcrumb": {
+      "dashboard": "Tableau de bord",
+      "products": "Produits"
+    }
+  }
+}

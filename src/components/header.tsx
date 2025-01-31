@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { LocaleSwitcher } from './locale-switcher';
 import { ModeToggle } from './mode-toggle';
 import {
   Breadcrumb,
@@ -47,6 +48,7 @@ const Header = ({ breadcrumbs }: HeaderProps) => {
           </BreadcrumbList>
         </Breadcrumb>
         <ModeToggle className="ml-auto" />
+        <LocaleSwitcher />
       </div>
     </header>
   );

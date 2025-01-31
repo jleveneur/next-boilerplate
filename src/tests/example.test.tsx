@@ -2,7 +2,9 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
 
 const ReactComponent = () => {
-  return <div>React Component</div>;
+  const name = 'React Component';
+
+  return <div>{name}</div>;
 };
 
 describe('ReactComponent', () => {

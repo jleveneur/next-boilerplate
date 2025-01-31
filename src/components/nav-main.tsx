@@ -1,7 +1,9 @@
 'use client';
 
+import { LayoutDashboard, Package, Users } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 import {
   SidebarGroup,
@@ -12,10 +14,10 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar';
-import { MAIN_LINKS } from '@/constants';
 import { cn } from '@/lib/utils';
 
 export function NavMain() {
+  const t = useTranslations('NavMain');
   const pathname = usePathname();
   const { toggleSidebar, isMobile } = useSidebar();
 
@@ -25,12 +27,18 @@ export function NavMain() {
     }
   };
 
+  const links = [
+    { label: t('dashboard'), href: '/', icon: LayoutDashboard },
+    { label: t('users'), href: '/users', icon: Users },
+    { label: t('products'), href: '/products', icon: Package },
+  ];
+
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Application</SidebarGroupLabel>
+      <SidebarGroupLabel>{t('label')}</SidebarGroupLabel>
       <SidebarGroupContent>
         <SidebarMenu>
-          {MAIN_LINKS.map((item) => (
+          {links.map((item) => (
             <SidebarMenuItem key={item.label}>
               <SidebarMenuButton asChild>
                 <Link

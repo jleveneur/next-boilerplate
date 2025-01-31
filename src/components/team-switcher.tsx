@@ -1,6 +1,7 @@
 'use client';
 
-import { ChevronsUpDown, Frame, Map, PieChart, Plus } from 'lucide-react';
+import { ChevronsUpDown, Command, Frame, Map, PieChart, Plus } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import * as React from 'react';
 
 import {
@@ -38,6 +39,7 @@ const teams = [
 ];
 
 export function TeamSwitcher() {
+  const t = useTranslations('TeamSwitcher');
   const { isMobile } = useSidebar();
   const [activeTeam, setActiveTeam] = React.useState(teams[0]);
 
@@ -66,7 +68,9 @@ export function TeamSwitcher() {
             side={isMobile ? 'bottom' : 'right'}
             sideOffset={4}
           >
-            <DropdownMenuLabel className="text-xs text-muted-foreground">Teams</DropdownMenuLabel>
+            <DropdownMenuLabel className="text-xs text-muted-foreground">
+              {t('label')}
+            </DropdownMenuLabel>
             {teams.map((team, index) => (
               <DropdownMenuItem
                 key={team.name}
@@ -77,7 +81,10 @@ export function TeamSwitcher() {
                   <team.logo className="size-4 shrink-0" />
                 </div>
                 {team.name}
-                <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut>
+                <DropdownMenuShortcut className="flex items-center justify-center gap-1">
+                  <Command className="size-[12px]" />
+                  {index + 1}
+                </DropdownMenuShortcut>
               </DropdownMenuItem>
             ))}
             <DropdownMenuSeparator />
@@ -85,7 +92,7 @@ export function TeamSwitcher() {
               <div className="flex size-6 items-center justify-center rounded-md border bg-background">
                 <Plus className="size-4" />
               </div>
-              <div className="font-medium text-muted-foreground">Add team</div>
+              <div className="font-medium text-muted-foreground">{t('add')}</div>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
