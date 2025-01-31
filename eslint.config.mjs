@@ -82,6 +82,7 @@ const config = [
             'src/constants/**/*',
             'src/hooks/**/*',
             'src/lib/**/*',
+            'src/locales/**/*',
             'src/styles/**/*',
             'src/types/**/*',
           ],

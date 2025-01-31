@@ -1,0 +1,15 @@
+{
+  "LocaleSwitcher": {
+    "label": "Langue",
+    "en": "English",
+    "fr": "Français"
+  },
+  "LoginForm": {
+    "title": "Connexion",
+    "description": "Veuillez entrer votre email ci-dessous pour vous connecter à votre compte.",
+    "email": "Email",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "loading": "Connexion en cours..."
+  }
+}

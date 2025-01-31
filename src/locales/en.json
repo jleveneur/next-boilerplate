@@ -1,0 +1,15 @@
+{
+  "LocaleSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "fr": "Français"
+  },
+  "LoginForm": {
+    "title": "Login",
+    "description": "Please enter your email below to login to your account.",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Login",
+    "loading": "Logging in..."
+  }
+}
