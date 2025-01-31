@@ -11,5 +11,59 @@
     "password": "Password",
     "submit": "Login",
     "loading": "Logging in..."
+  },
+  "ModeToggle": {
+    "toggle": "Toggle theme"
+  },
+  "NavMain": {
+    "label": "Application",
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "products": "Products"
+  },
+  "NavProjects": {
+    "label": "Projects",
+    "view": "View project",
+    "share": "Share project",
+    "delete": "Delete project",
+    "more": "More"
+  },
+  "NavUser": {
+    "label": "User",
+    "upgrade": "Upgrade to Pro",
+    "profile": "Profile",
+    "billing": "Billing",
+    "notifications": "Notifications",
+    "logout": "Logout"
+  },
+  "TeamSwitcher": {
+    "label": "Teams",
+    "add": "Add a team"
+  },
+  "BreadcrumbEllipsis": {
+    "more": "More navigation"
+  },
+  "SheetContent": {
+    "close": "Close"
+  },
+  "SidebarTrigger": {
+    "toggle": "Toggle sidebar"
+  },
+  "Dashboard": {
+    "breadcrumb": {
+      "dashboard": "Dashboard"
+    }
+  },
+  "Users": {
+    "breadcrumb": {
+      "dashboard": "Dashboard",
+      "users": "Users"
+    }
+  },
+  "Products": {
+    "breadcrumb": {
+      "dashboard": "Dashboard",
+      "products": "Products"
+    }
   }
 }

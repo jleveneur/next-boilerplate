@@ -1,6 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -22,6 +23,7 @@ import { cn } from '@/lib/utils';
 const LoginForm = ({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const t = useTranslations('LoginForm');
 
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
@@ -43,8 +45,8 @@ const LoginForm = ({ className, ...props }: React.ComponentPropsWithoutRef<'div'
     <div className={cn('flex flex-col gap-6', className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Login</CardTitle>
-          <CardDescription>Enter your email below to login to your account</CardDescription>
+          <CardTitle className="text-2xl">{t('title')}</CardTitle>
+          <CardDescription>{t('description')}</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -55,7 +57,7 @@ const LoginForm = ({ className, ...props }: React.ComponentPropsWithoutRef<'div'
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel>{t('email')}</FormLabel>
                       <FormControl>
                         <Input {...field} placeholder="m@example.com" />
                       </FormControl>
@@ -68,7 +70,7 @@ const LoginForm = ({ className, ...props }: React.ComponentPropsWithoutRef<'div'
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Password</FormLabel>
+                      <FormLabel>{t('password')}</FormLabel>
                       <FormControl>
                         <Input {...field} placeholder="" type="password" />
                       </FormControl>
@@ -78,7 +80,7 @@ const LoginForm = ({ className, ...props }: React.ComponentPropsWithoutRef<'div'
                 />
                 {errorMessage && <div className="text-destructive">{errorMessage}</div>}
                 <Button type="submit" className="w-full">
-                  {isLoading ? 'Loading...' : 'Login'}
+                  {isLoading ? t('loading') : t('submit')}
                 </Button>
               </div>
             </form>

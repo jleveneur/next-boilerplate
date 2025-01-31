@@ -133,6 +133,7 @@ const config = [
           ],
         },
       ],
+      'react/jsx-no-literals': 'error',
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': 'error',
       'unicorn/no-array-callback-reference': 'off',
