@@ -37,4 +37,4 @@ const AppSidebar = async (props: React.ComponentProps<typeof Sidebar>) => {
   );
 };
 
-export default AppSidebar;
+export { AppSidebar };

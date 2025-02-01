@@ -1,9 +1,9 @@
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
-import Header from '@/components/header';
+import { Header } from '@/components/header';
 
-const DashboardPage = () => {
+export default function Dashboard() {
   const t = useTranslations('Dashboard');
 
   const breadcrumbs = [{ label: t('breadcrumb.dashboard') }];
@@ -21,6 +21,4 @@ const DashboardPage = () => {
       </div>
     </React.Fragment>
   );
-};
-
-export default DashboardPage;
+}

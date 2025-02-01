@@ -20,7 +20,11 @@ import { Input } from '@/components/ui/input';
 import { login, loginSchema } from '@/lib/auth';
 import { cn } from '@/lib/utils';
 
-const LoginForm = ({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) => {
+type LoginFormProps = {
+  className?: string;
+};
+
+const LoginForm = ({ className }: LoginFormProps) => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations('LoginForm');
@@ -42,53 +46,51 @@ const LoginForm = ({ className, ...props }: React.ComponentPropsWithoutRef<'div'
   }
 
   return (
-    <div className={cn('flex flex-col gap-6', className)} {...props}>
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-2xl">{t('title')}</CardTitle>
-          <CardDescription>{t('description')}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
-              <div className="flex flex-col gap-6">
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t('email')}</FormLabel>
-                      <FormControl>
-                        <Input {...field} placeholder="m@example.com" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="password"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t('password')}</FormLabel>
-                      <FormControl>
-                        <Input {...field} placeholder="" type="password" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                {errorMessage && <div className="text-destructive">{errorMessage}</div>}
-                <Button type="submit" className="w-full">
-                  {isLoading ? t('loading') : t('submit')}
-                </Button>
-              </div>
-            </form>
-          </Form>
-        </CardContent>
-      </Card>
-    </div>
+    <Card className={cn('flex flex-col gap-6', className)}>
+      <CardHeader>
+        <CardTitle className="text-2xl">{t('title')}</CardTitle>
+        <CardDescription>{t('description')}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)}>
+            <div className="flex flex-col gap-6">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('email')}</FormLabel>
+                    <FormControl>
+                      <Input {...field} placeholder="m@example.com" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="password"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('password')}</FormLabel>
+                    <FormControl>
+                      <Input {...field} placeholder="" type="password" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              {errorMessage && <div className="text-destructive">{errorMessage}</div>}
+              <Button type="submit" className="w-full">
+                {isLoading ? t('loading') : t('submit')}
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </CardContent>
+    </Card>
   );
 };
 
-export default LoginForm;
+export { LoginForm };

@@ -38,7 +38,7 @@ const teams = [
   },
 ];
 
-export function TeamSwitcher() {
+const TeamSwitcher = () => {
   const t = useTranslations('TeamSwitcher');
   const { isMobile } = useSidebar();
   const [activeTeam, setActiveTeam] = React.useState(teams[0]);
@@ -82,7 +82,7 @@ export function TeamSwitcher() {
                 </div>
                 {team.name}
                 <DropdownMenuShortcut className="flex items-center justify-center gap-1">
-                  <Command className="size-[12px]" />
+                  <Command className="size-3" />
                   {index + 1}
                 </DropdownMenuShortcut>
               </DropdownMenuItem>
@@ -99,4 +99,6 @@ export function TeamSwitcher() {
       </SidebarMenuItem>
     </SidebarMenu>
   );
-}
+};
+
+export { TeamSwitcher };

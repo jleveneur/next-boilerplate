@@ -1,13 +1,13 @@
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
-import Header from '@/components/header';
+import { Header } from '@/components/header';
 
-const Users = () => {
+export default function Users() {
   const t = useTranslations('Users');
 
   const breadcrumbs = [
-    { label: t('breadcrumb.dashboard'), href: '/' },
+    { label: t('breadcrumb.dashboard'), href: '/', isHiddenOnMobile: true },
     { label: t('breadcrumb.users') },
   ];
 
@@ -24,6 +24,4 @@ const Users = () => {
       </div>
     </React.Fragment>
   );
-};
-
-export default Users;
+}

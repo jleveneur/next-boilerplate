@@ -31,7 +31,7 @@ type NavUserProps = {
   };
 };
 
-export function NavUser({ user }: NavUserProps) {
+const NavUser = ({ user }: NavUserProps) => {
   const t = useTranslations('NavUser');
   const { isMobile } = useSidebar();
 
@@ -105,4 +105,6 @@ export function NavUser({ user }: NavUserProps) {
       </SidebarMenuItem>
     </SidebarMenu>
   );
-}
+};
+
+export { NavUser };

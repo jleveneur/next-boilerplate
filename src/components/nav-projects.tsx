@@ -20,7 +20,7 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar';
 
-export function NavProjects() {
+const NavProjects = () => {
   const t = useTranslations('NavProjects');
   const { isMobile } = useSidebar();
 
@@ -92,4 +92,6 @@ export function NavProjects() {
       </SidebarMenu>
     </SidebarGroup>
   );
-}
+};
+
+export { NavProjects };

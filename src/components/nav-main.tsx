@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/sidebar';
 import { cn } from '@/lib/utils';
 
-export function NavMain() {
+const NavMain = () => {
   const t = useTranslations('NavMain');
   const pathname = usePathname();
   const { toggleSidebar, isMobile } = useSidebar();
@@ -59,4 +59,6 @@ export function NavMain() {
       </SidebarGroupContent>
     </SidebarGroup>
   );
-}
+};
+
+export { NavMain };
