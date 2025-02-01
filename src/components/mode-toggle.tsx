@@ -10,7 +10,7 @@ type ModeToggleProps = {
   className?: string;
 };
 
-const ModeToggle: React.FC<ModeToggleProps> = ({ className }) => {
+const ModeToggle = ({ className }: ModeToggleProps) => {
   const t = useTranslations('ModeToggle');
   const { setTheme } = useTheme();
 

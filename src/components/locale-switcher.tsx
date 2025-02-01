@@ -23,7 +23,7 @@ const LocaleSwitcher = ({ className }: LocaleSwitcherProps) => {
   const currentLocale = useLocale();
 
   return (
-    <Select onValueChange={(locale: Locale) => setUserLocale(locale)} value={currentLocale}>
+    <Select onValueChange={(locale: Locale) => setUserLocale(locale)} defaultValue={currentLocale}>
       <SelectTrigger className={cn('w-[120px]', className)}>
         <SelectValue />
       </SelectTrigger>
