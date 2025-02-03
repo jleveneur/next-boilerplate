@@ -1,5 +1,6 @@
 'use client';
 
+import { type User } from '@supabase/supabase-js';
 import { BadgeCheck, Bell, ChevronsUpDown, CreditCard, LogOut, Sparkles } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -21,19 +22,20 @@ import {
 } from '@/components/ui/sidebar';
 import { logout } from '@/lib/auth';
 
-const AVATAR_FALLBACK = 'CN';
-
 type NavUserProps = {
-  user: {
-    name: string;
-    email: string;
-    avatar: string;
-  };
+  user: User;
 };
 
 const NavUser = ({ user }: NavUserProps) => {
   const t = useTranslations('NavUser');
   const { isMobile } = useSidebar();
+
+  const fullName = user.user_metadata.first_name + ' ' + user.user_metadata.last_name;
+  const avatarUrl = user.user_metadata.avatar_url;
+  const avatarFallback = fullName
+    .split(' ')
+    .map((name) => name[0])
+    .join('');
 
   return (
     <SidebarMenu>
@@ -45,11 +47,11 @@ const NavUser = ({ user }: NavUserProps) => {
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
               <Avatar className="size-8 rounded-lg">
-                <AvatarImage src={user.avatar} alt={user.name} />
-                <AvatarFallback className="rounded-lg">{AVATAR_FALLBACK}</AvatarFallback>
+                <AvatarImage src={avatarUrl} alt={fullName} />
+                <AvatarFallback className="rounded-lg">{avatarFallback}</AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold">{user.name}</span>
+                <span className="truncate font-semibold">{fullName}</span>
                 <span className="truncate text-xs">{user.email}</span>
               </div>
               <ChevronsUpDown className="ml-auto size-4" />
@@ -64,11 +66,11 @@ const NavUser = ({ user }: NavUserProps) => {
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="size-8 rounded-lg">
-                  <AvatarImage src={user.avatar} alt={user.name} />
-                  <AvatarFallback className="rounded-lg">{AVATAR_FALLBACK}</AvatarFallback>
+                  <AvatarImage src={avatarUrl} alt={fullName} />
+                  <AvatarFallback className="rounded-lg">{avatarFallback}</AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">{user.name}</span>
+                  <span className="truncate font-semibold">{fullName}</span>
                   <span className="truncate text-xs">{user.email}</span>
                 </div>
               </div>

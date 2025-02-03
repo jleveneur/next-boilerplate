@@ -1,6 +1,6 @@
 'use client';
 
-import { LayoutDashboard, Package } from 'lucide-react';
+import { Settings, Users } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
@@ -16,8 +16,8 @@ import {
 } from '@/components/ui/sidebar';
 import { cn } from '@/lib/utils';
 
-const NavMain = () => {
-  const t = useTranslations('NavMain');
+const NavAdmin = () => {
+  const t = useTranslations('NavAdmin');
   const pathname = usePathname();
   const { toggleSidebar, isMobile } = useSidebar();
 
@@ -28,8 +28,12 @@ const NavMain = () => {
   };
 
   const links = [
-    { label: t('dashboard'), href: '/', icon: LayoutDashboard },
-    { label: t('products'), href: '/products', icon: Package },
+    { label: t('users'), href: '/users', icon: Users },
+    {
+      label: t('settings'),
+      href: '/settings',
+      icon: Settings,
+    },
   ];
 
   return (
@@ -60,4 +64,4 @@ const NavMain = () => {
   );
 };
 
-export { NavMain };
+export { NavAdmin };

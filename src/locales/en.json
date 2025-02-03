@@ -18,8 +18,13 @@
   "NavMain": {
     "label": "Application",
     "dashboard": "Dashboard",
-    "users": "Users",
     "products": "Products"
+  },
+  "NavAdmin": {
+    "label": "Admin",
+    "settings": "Settings",
+    "users": "Users",
+    "billing": "Billing"
   },
   "NavProjects": {
     "label": "Projects",
