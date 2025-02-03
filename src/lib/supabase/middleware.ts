@@ -3,7 +3,9 @@ import { type NextRequest, NextResponse } from 'next/server';
 
 import { env } from '../env';
 
-const isPublicRoute = new Set(['/login']);
+// Define which routes are public and which require admin access
+const adminRoutes = new Set(['/users']);
+const publicRoutes = new Set(['/login']);
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
@@ -41,13 +43,23 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // if (!user && !request.nextUrl.pathname.startsWith('/login')) {
-  //   // no user, potentially respond by redirecting the user to the login page
-  //   return NextResponse.redirect(new URL('/login', request.url));
-  // }
+  const path = request.nextUrl.pathname;
+  const isPublicRoute = publicRoutes.has(path);
+  const isAdminRoute = adminRoutes.has(path);
 
-  if (!user && !isPublicRoute.has(request.nextUrl.pathname)) {
+  // Redirect to the login page if the user is not logged in and tries to access a protected route
+  if (!user && !isPublicRoute) {
     return NextResponse.redirect(new URL('/login', request.url));
+  }
+
+  // Redirect to the home page if the user is logged in and tries to access the login page
+  if (isPublicRoute && user) {
+    return NextResponse.redirect(new URL('/', request.url));
+  }
+
+  // Redirect to the home page if the user is not an admin
+  if (user && isAdminRoute && user.user_metadata.role !== 'admin') {
+    return NextResponse.redirect(new URL('/', request.url));
   }
 
   // IMPORTANT: You *must* return the supabaseResponse object as it is.
