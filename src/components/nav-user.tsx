@@ -30,7 +30,7 @@ const NavUser = ({ user }: NavUserProps) => {
   const t = useTranslations('NavUser');
   const { isMobile } = useSidebar();
 
-  const fullName = user.user_metadata.first_name + ' ' + user.user_metadata.last_name;
+  const fullName = user.user_metadata.full_name as string;
   const avatarUrl = user.user_metadata.avatar_url;
   const avatarFallback = fullName
     .split(' ')
