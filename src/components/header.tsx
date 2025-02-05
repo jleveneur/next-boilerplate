@@ -13,14 +13,8 @@ import {
 import { Separator } from './ui/separator';
 import { SidebarTrigger } from './ui/sidebar';
 
-export type Breadcrumb = {
-  href?: string;
-  label: string;
-  isHiddenOnMobile?: boolean;
-};
-
 type HeaderProps = {
-  breadcrumbs: Breadcrumb[];
+  breadcrumbs: Array<{ label: string; href?: string; isHiddenOnMobile?: boolean }>;
 };
 
 const Header = ({ breadcrumbs }: HeaderProps) => {

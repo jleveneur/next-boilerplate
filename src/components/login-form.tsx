@@ -46,7 +46,7 @@ const LoginForm = ({ className }: LoginFormProps) => {
   }
 
   return (
-    <Card className={cn('flex flex-col gap-6', className)}>
+    <Card className={cn('flex flex-col', className)}>
       <CardHeader>
         <CardTitle className="text-2xl">{t('title')}</CardTitle>
         <CardDescription>{t('description')}</CardDescription>
@@ -82,7 +82,7 @@ const LoginForm = ({ className }: LoginFormProps) => {
                 )}
               />
               {errorMessage && <div className="text-destructive">{errorMessage}</div>}
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? t('loading') : t('submit')}
               </Button>
             </div>

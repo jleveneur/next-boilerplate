@@ -18,8 +18,13 @@
   "NavMain": {
     "label": "Application",
     "dashboard": "Tableau de bord",
-    "users": "Utilisateurs",
     "products": "Produits"
+  },
+  "NavAdmin": {
+    "label": "Administration",
+    "settings": "Paramètres",
+    "users": "Utilisateurs",
+    "billing": "Facturation"
   },
   "NavProjects": {
     "label": "Projets",
@@ -43,6 +48,9 @@
   "BreadcrumbEllipsis": {
     "more": "Plus de navigation"
   },
+  "DialogContent": {
+    "close": "Fermer"
+  },
   "SheetContent": {
     "close": "Fermer"
   },
@@ -58,6 +66,62 @@
     "breadcrumb": {
       "dashboard": "Tableau de bord",
       "users": "Utilisateurs"
+    },
+    "title": "Utilisateurs",
+    "description": "Gérer les utilisateurs de l'application.",
+    "components": {
+      "UsersTable": {
+        "noData": "Aucun utilisateur trouvé."
+      },
+      "UsersTableToolbar": {
+        "searchByEmail": "Filtrer par email...",
+        "clearFilters": "Réinitialiser",
+        "createUser": "Créer un utilisateur"
+      },
+      "UsersTableRowActions": {
+        "edit": "Modifier",
+        "delete": "Supprimer",
+        "open": "Ouvrir le menu"
+      },
+      "CreateUserForm": {
+        "title": "Créer un utilisateur",
+        "description": "Veuillez remplir le formulaire ci-dessous pour créer un nouvel utilisateur.",
+        "fields": {
+          "fullName": "Nom complet",
+          "email": "Email",
+          "role": "Rôle",
+          "password": "Mot de passe"
+        },
+        "admin": "Administrateur",
+        "user": "Utilisateur",
+        "submit": "Créer l'utilisateur",
+        "cancel": "Annuler",
+        "submitting": "Création en cours...",
+        "success": "Utilisateur créé avec succès!"
+      },
+      "UpdateUserForm": {
+        "title": "Modifier l'utilisateur",
+        "description": "Veuillez modifier les informations de l'utilisateur ci-dessous.",
+        "fields": {
+          "fullName": "Nom complet",
+          "email": "Email",
+          "role": "Rôle",
+          "password": "Mot de passe"
+        },
+        "admin": "Administrateur",
+        "user": "Utilisateur",
+        "submit": "Mettre à jour l'utilisateur",
+        "cancel": "Annuler",
+        "submitting": "Mise à jour en cours...",
+        "success": "Utilisateur mis à jour avec succès!"
+      },
+      "DeleteUserDialog": {
+        "title": "Êtes-vous absolument sûr?",
+        "description": "Cette action est irréversible. Cela supprimera définitivement votre compte et supprimera vos données de nos serveurs.",
+        "delete": "Supprimer l'utilisateur",
+        "cancel": "Annuler",
+        "pending": "Suppression en cours..."
+      }
     }
   },
   "Products": {
@@ -65,5 +129,18 @@
       "dashboard": "Tableau de bord",
       "products": "Produits"
     }
+  },
+  "DataTableColumnHeader": {
+    "asc": "Asc",
+    "desc": "Desc"
+  },
+  "DataTablePagination": {
+    "goToPreviousPage": "Aller à la page précédente",
+    "goToNextPage": "Aller à la page suivante",
+    "goToFirstPage": "Aller à la première page",
+    "goToLastPage": "Aller à la dernière page",
+    "rowsPerPage": "Lignes par page",
+    "selectedRows": "{selectedRowCount} sur {totalRowCount} ligne(s) sélectionnée(s).",
+    "pageCount": "Page {currentPage} sur {pageCount}"
   }
 }
