@@ -48,6 +48,9 @@
   "BreadcrumbEllipsis": {
     "more": "More navigation"
   },
+  "DialogContent": {
+    "close": "Close"
+  },
   "SheetContent": {
     "close": "Close"
   },
@@ -63,6 +66,85 @@
     "breadcrumb": {
       "dashboard": "Dashboard",
       "users": "Users"
+    },
+    "title": "Users",
+    "description": "Manage users in the application.",
+    "pages": {
+      "index": {
+        "title": "Users",
+        "description": "Manage users in the application."
+      },
+      "create": {
+        "title": "Create User",
+        "description": "Create a new user in the application.",
+        "breadcrumbs": {
+          "dashboard": "Dashboard",
+          "users": "Users",
+          "create": "Create User"
+        }
+      },
+      "update": {
+        "title": "Update User",
+        "description": "Update an existing user in the application.",
+        "breadcrumbs": {
+          "dashboard": "Dashboard",
+          "users": "Users",
+          "update": "Update User"
+        }
+      }
+    },
+    "components": {
+      "UsersTable": {
+        "noData": "No users found."
+      },
+      "UsersTableToolbar": {
+        "searchByEmail": "Filter by email...",
+        "clearFilters": "Reset",
+        "createUser": "Create User"
+      },
+      "UsersTableRowActions": {
+        "edit": "Edit",
+        "delete": "Delete",
+        "open": "Open menu"
+      },
+      "CreateUserForm": {
+        "title": "Create User",
+        "description": "Please enter the user's information below to create a new user.",
+        "fields": {
+          "fullName": "Full Name",
+          "email": "Email",
+          "role": "Role",
+          "password": "Password"
+        },
+        "admin": "Admin",
+        "user": "User",
+        "submit": "Create User",
+        "cancel": "Cancel",
+        "submitting": "Creating user..."
+      },
+      "UpdateUserForm": {
+        "title": "Update User",
+        "description": "Please update the user's information below.",
+        "fields": {
+          "fullName": "Full Name",
+          "email": "Email",
+          "role": "Role",
+          "password": "Password"
+        },
+        "admin": "Admin",
+        "user": "User",
+        "submit": "Update User",
+        "cancel": "Cancel",
+        "submitting": "Updating user...",
+        "success": "User updated successfully."
+      },
+      "DeleteUserDialog": {
+        "title": "Are you absolutely sure?",
+        "description": "This action cannot be undone. This will permanently delete your account and remove your data from our servers.",
+        "delete": "Delete User",
+        "cancel": "Cancel",
+        "pending": "Deleting user..."
+      }
     }
   },
   "Products": {
@@ -70,5 +152,18 @@
       "dashboard": "Dashboard",
       "products": "Products"
     }
+  },
+  "DataTableColumnHeader": {
+    "asc": "Asc",
+    "desc": "Desc"
+  },
+  "DataTablePagination": {
+    "goToPreviousPage": "Go to previous page",
+    "goToNextPage": "Go to next page",
+    "goToFirstPage": "Go to first page",
+    "goToLastPage": "Go to last page",
+    "rowsPerPage": "Rows per page",
+    "selectedRows": "{selectedRowCount} of {totalRowCount} row(s) selected.",
+    "pageCount": "Page {currentPage} of {pageCount}"
   }
 }
