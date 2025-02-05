@@ -26,7 +26,7 @@ const DashboardLayout = ({ children, breadcrumbs, title, description }: Dashboar
       <AppSidebar />
       <SidebarInset>
         <Header breadcrumbs={breadcrumbs} />
-        <main className="flex-1 overflow-y-auto p-6">
+        <main className="flex-1 p-6">
           {title && <h1 className="mb-4 text-3xl font-semibold">{title}</h1>}
           {description && <p className="mb-6 text-gray-600">{description}</p>}
           {children}
