@@ -26,13 +26,6 @@
     "users": "Utilisateurs",
     "billing": "Facturation"
   },
-  "NavProjects": {
-    "label": "Projets",
-    "view": "Voir le projet",
-    "share": "Partager le projet",
-    "delete": "Supprimer le projet",
-    "more": "Plus"
-  },
   "NavUser": {
     "label": "Utilisateur",
     "upgrade": "Mettre à niveau",

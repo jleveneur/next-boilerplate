@@ -26,13 +26,6 @@
     "users": "Users",
     "billing": "Billing"
   },
-  "NavProjects": {
-    "label": "Projects",
-    "view": "View project",
-    "share": "Share project",
-    "delete": "Delete project",
-    "more": "More"
-  },
   "NavUser": {
     "label": "User",
     "upgrade": "Upgrade to Pro",

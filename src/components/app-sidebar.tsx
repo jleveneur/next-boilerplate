@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { NavProjects } from '@/components/nav-projects';
 import {
   Sidebar,
   SidebarContent,
@@ -26,7 +25,6 @@ const AppSidebar = async (props: React.ComponentProps<typeof Sidebar>) => {
       <SidebarContent>
         <NavMain />
         {user?.user_metadata.role === 'admin' && <NavAdmin />}
-        <NavProjects />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={user!} />
