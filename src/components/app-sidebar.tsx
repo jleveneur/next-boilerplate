@@ -13,6 +13,7 @@ import { NavAdmin } from './nav-admin';
 import { NavMain } from './nav-main';
 import { NavUser } from './nav-user';
 import { TeamSwitcher } from './team-switcher';
+import { UserPreferences } from './user-preferences';
 
 const AppSidebar = async (props: React.ComponentProps<typeof Sidebar>) => {
   const user = await getUser();
@@ -27,6 +28,7 @@ const AppSidebar = async (props: React.ComponentProps<typeof Sidebar>) => {
         {user?.user_metadata.role === 'admin' && <NavAdmin />}
       </SidebarContent>
       <SidebarFooter>
+        <UserPreferences />
         <NavUser user={user!} />
       </SidebarFooter>
       <SidebarRail />
