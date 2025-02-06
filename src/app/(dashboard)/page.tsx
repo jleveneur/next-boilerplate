@@ -1,11 +1,10 @@
-import { useTranslations } from 'next-intl';
-
 import { DashboardLayout } from '@/components/layouts/dashboard-layout';
+import { useNavigation } from '@/hooks/translations/use-navigation';
 
 export default function Dashboard() {
-  const t = useTranslations('Dashboard');
+  const t = useNavigation();
 
-  const breadcrumbs = [{ label: t('breadcrumb.dashboard') }];
+  const breadcrumbs = [{ label: t('dashboard') }];
 
   return (
     <DashboardLayout breadcrumbs={breadcrumbs}>

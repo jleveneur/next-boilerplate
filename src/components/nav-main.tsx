@@ -3,7 +3,6 @@
 import { LayoutDashboard, Package } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
 
 import {
   SidebarGroup,
@@ -14,10 +13,11 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar';
+import { useNavigation } from '@/hooks/translations/use-navigation';
 import { cn } from '@/lib/utils';
 
 const NavMain = () => {
-  const t = useTranslations('NavMain');
+  const t = useNavigation();
   const pathname = usePathname();
   const { toggleSidebar, isMobile } = useSidebar();
 
@@ -34,7 +34,7 @@ const NavMain = () => {
 
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>{t('label')}</SidebarGroupLabel>
+      <SidebarGroupLabel>{t('application')}</SidebarGroupLabel>
       <SidebarGroupContent>
         <SidebarMenu>
           {links.map((item) => (

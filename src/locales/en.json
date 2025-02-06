@@ -1,169 +1,129 @@
 {
-  "LocaleSwitcher": {
-    "label": "Language",
-    "en": "English",
-    "fr": "Français"
-  },
-  "LoginForm": {
-    "title": "Login",
-    "description": "Please enter your email below to login to your account.",
-    "email": "Email",
-    "password": "Password",
-    "submit": "Login",
-    "loading": "Logging in..."
-  },
-  "ModeToggle": {
-    "toggle": "Toggle theme"
-  },
-  "NavMain": {
-    "label": "Application",
-    "dashboard": "Dashboard",
-    "products": "Products"
-  },
-  "NavAdmin": {
-    "label": "Admin",
-    "settings": "Settings",
-    "users": "Users",
-    "billing": "Billing"
-  },
-  "NavProjects": {
-    "label": "Projects",
-    "view": "View project",
-    "share": "Share project",
-    "delete": "Delete project",
-    "more": "More"
-  },
-  "NavUser": {
-    "label": "User",
-    "upgrade": "Upgrade to Pro",
-    "profile": "Profile",
-    "billing": "Billing",
-    "notifications": "Notifications",
-    "logout": "Logout"
-  },
-  "TeamSwitcher": {
-    "label": "Teams",
-    "add": "Add a team"
-  },
-  "BreadcrumbEllipsis": {
-    "more": "More navigation"
-  },
-  "DialogContent": {
-    "close": "Close"
-  },
-  "SheetContent": {
-    "close": "Close"
-  },
-  "SidebarTrigger": {
-    "toggle": "Toggle sidebar"
-  },
-  "Dashboard": {
-    "breadcrumb": {
-      "dashboard": "Dashboard"
+  "common": {
+    "buttons": {
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "create": "Create",
+      "add": "Add",
+      "open": "Open",
+      "search": "Search",
+      "save": "Save",
+      "delete": "Delete",
+      "edit": "Edit",
+      "close": "Close",
+      "reset": "Reset",
+      "toggle": "Toggle",
+      "more": "More",
+      "submitting": "Submitting...",
+      "pending": "Pending..."
+    },
+    "navigation": {
+      "application": "Application",
+      "dashboard": "Dashboard",
+      "products": "Products",
+      "admin": "Admin",
+      "users": {
+        "list": "Users",
+        "create": "Create User",
+        "update": "Update User"
+      },
+      "settings": "Settings"
+    },
+    "errors": {
+      "required": "{field} is required",
+      "invalid_email": "Invalid email address",
+      "min_length": "{field} must be at least {count} characters",
+      "max_length": "{field} must not exceed {count} characters",
+      "password_match": "Passwords must match",
+      "server_error": "An error occurred. Please try again later"
     }
   },
-  "Users": {
-    "breadcrumb": {
-      "dashboard": "Dashboard",
-      "users": "Users"
+  "components": {
+    "locale_switcher": {
+      "label": "Language",
+      "en": "English",
+      "fr": "Français"
     },
-    "title": "Users",
-    "description": "Manage users in the application.",
-    "pages": {
-      "index": {
+    "team_switcher": {
+      "label": "Teams",
+      "add": "Add a team"
+    },
+    "nav_user": {
+      "label": "User",
+      "upgrade": "Upgrade to Pro",
+      "profile": "Profile",
+      "billing": "Billing",
+      "notifications": "Notifications",
+      "logout": "Logout"
+    },
+    "data_table_column_header": {
+      "asc": "Asc",
+      "desc": "Desc"
+    },
+    "data_table_pagination": {
+      "rows_per_page": "Rows per page",
+      "selected_rows": "{selectedRowCount} of {totalRowCount} row(s) selected.",
+      "page_count": "Page {currentPage} of {pageCount}",
+      "first_page": "First page",
+      "previous_page": "Previous page",
+      "next_page": "Next page",
+      "last_page": "Last page"
+    }
+  },
+  "features": {
+    "auth": {
+      "login": {
+        "title": "Login",
+        "description": "Please enter your email below to login to your account.",
+        "form": {
+          "fields": {
+            "email": "Email",
+            "password": "Password"
+          },
+          "submit": "Login",
+          "loading": "Logging in..."
+        }
+      }
+    },
+    "users": {
+      "list": {
         "title": "Users",
-        "description": "Manage users in the application."
+        "description": "Manage users in the application.",
+        "empty_state": "No users found."
       },
       "create": {
         "title": "Create User",
         "description": "Create a new user in the application.",
-        "breadcrumbs": {
-          "dashboard": "Dashboard",
-          "users": "Users",
-          "create": "Create User"
+        "form": {
+          "fields": {
+            "full_name": "Full Name",
+            "email": "Email",
+            "role": "Role",
+            "password": "Password"
+          }
         }
       },
       "update": {
         "title": "Update User",
         "description": "Update an existing user in the application.",
-        "breadcrumbs": {
-          "dashboard": "Dashboard",
-          "users": "Users",
-          "update": "Update User"
+        "form": {
+          "fields": {
+            "full_name": "Full Name",
+            "email": "Email",
+            "role": "Role"
+          }
+        }
+      },
+      "delete": {
+        "title": "Are you absolutely sure?",
+        "description": "This action cannot be undone. This will permanently delete your account and remove your data from our servers."
+      },
+      "common": {
+        "roles": {
+          "admin": "Admin",
+          "user": "User"
         }
       }
-    },
-    "components": {
-      "UsersTable": {
-        "noData": "No users found."
-      },
-      "UsersTableToolbar": {
-        "searchByEmail": "Filter by email...",
-        "clearFilters": "Reset",
-        "createUser": "Create User"
-      },
-      "UsersTableRowActions": {
-        "edit": "Edit",
-        "delete": "Delete",
-        "open": "Open menu"
-      },
-      "CreateUserForm": {
-        "title": "Create User",
-        "description": "Please enter the user's information below to create a new user.",
-        "fields": {
-          "fullName": "Full Name",
-          "email": "Email",
-          "role": "Role",
-          "password": "Password"
-        },
-        "admin": "Admin",
-        "user": "User",
-        "submit": "Create User",
-        "cancel": "Cancel",
-        "submitting": "Creating user..."
-      },
-      "UpdateUserForm": {
-        "title": "Update User",
-        "description": "Please update the user's information below.",
-        "fields": {
-          "fullName": "Full Name",
-          "email": "Email",
-          "role": "Role",
-          "password": "Password"
-        },
-        "admin": "Admin",
-        "user": "User",
-        "submit": "Update User",
-        "cancel": "Cancel",
-        "submitting": "Updating user...",
-        "success": "User updated successfully."
-      },
-      "DeleteUserDialog": {
-        "title": "Are you absolutely sure?",
-        "description": "This action cannot be undone. This will permanently delete your account and remove your data from our servers.",
-        "delete": "Delete User",
-        "cancel": "Cancel",
-        "pending": "Deleting user..."
-      }
     }
-  },
-  "Products": {
-    "breadcrumb": {
-      "dashboard": "Dashboard",
-      "products": "Products"
-    }
-  },
-  "DataTableColumnHeader": {
-    "asc": "Asc",
-    "desc": "Desc"
-  },
-  "DataTablePagination": {
-    "goToPreviousPage": "Go to previous page",
-    "goToNextPage": "Go to next page",
-    "goToFirstPage": "Go to first page",
-    "goToLastPage": "Go to last page",
-    "rowsPerPage": "Rows per page",
-    "selectedRows": "{selectedRowCount} of {totalRowCount} row(s) selected.",
-    "pageCount": "Page {currentPage} of {pageCount}"
   }
 }

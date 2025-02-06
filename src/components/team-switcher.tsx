@@ -1,7 +1,6 @@
 'use client';
 
 import { ChevronsUpDown, Command, Frame, Map, PieChart, Plus } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 import * as React from 'react';
 
 import {
@@ -19,6 +18,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar';
+import { useComponents } from '@/hooks/translations/use-components';
 
 const teams = [
   {
@@ -39,7 +39,7 @@ const teams = [
 ];
 
 const TeamSwitcher = () => {
-  const t = useTranslations('TeamSwitcher');
+  const t = useComponents('team_switcher');
   const { isMobile } = useSidebar();
   const [activeTeam, setActiveTeam] = React.useState(teams[0]);
 

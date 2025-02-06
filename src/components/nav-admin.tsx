@@ -3,7 +3,6 @@
 import { Settings, Users } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
 
 import {
   SidebarGroup,
@@ -14,10 +13,11 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar';
+import { useNavigation } from '@/hooks/translations/use-navigation';
 import { cn } from '@/lib/utils';
 
 const NavAdmin = () => {
-  const t = useTranslations('NavAdmin');
+  const t = useNavigation();
   const pathname = usePathname();
   const { toggleSidebar, isMobile } = useSidebar();
 
@@ -28,7 +28,7 @@ const NavAdmin = () => {
   };
 
   const links = [
-    { label: t('users'), href: '/users', icon: Users },
+    { label: t('users.list'), href: '/users', icon: Users },
     {
       label: t('settings'),
       href: '/settings',
@@ -38,7 +38,7 @@ const NavAdmin = () => {
 
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>{t('label')}</SidebarGroupLabel>
+      <SidebarGroupLabel>{t('admin')}</SidebarGroupLabel>
       <SidebarGroupContent>
         <SidebarMenu>
           {links.map((item) => (

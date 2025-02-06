@@ -1,17 +1,17 @@
 'use client';
 
 import { Moon, Sun } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 
 import { Button } from '@/components/ui/button';
+import { useButtons } from '@/hooks/translations/use-buttons';
 
 type ModeToggleProps = {
   className?: string;
 };
 
 const ModeToggle = ({ className }: ModeToggleProps) => {
-  const t = useTranslations('ModeToggle');
+  const t = useButtons();
   const { setTheme } = useTheme();
 
   return (

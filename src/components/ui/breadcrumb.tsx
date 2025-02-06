@@ -1,9 +1,9 @@
 import { ChevronRightIcon, DotsHorizontalIcon } from '@radix-ui/react-icons';
 import { Slot } from '@radix-ui/react-slot';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
 import * as React from 'react';
 
+import { useButtons } from '@/hooks/translations/use-buttons';
 import { cn } from '@/lib/utils';
 
 const Breadcrumb = React.forwardRef<
@@ -80,7 +80,7 @@ const BreadcrumbSeparator = ({ children, className, ...props }: React.ComponentP
 BreadcrumbSeparator.displayName = 'BreadcrumbSeparator';
 
 const BreadcrumbEllipsis = ({ className, ...props }: React.ComponentProps<'span'>) => {
-  const t = useTranslations('BreadcrumbEllipsis');
+  const t = useButtons();
 
   return (
     <span

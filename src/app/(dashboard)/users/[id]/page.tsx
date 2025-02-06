@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import { getTranslations } from 'next-intl/server';
 
 import { DashboardLayout } from '@/components/layouts/dashboard-layout';
 import { getUser, UpdateUserForm } from '@/features/users';
@@ -10,6 +11,7 @@ export default async function UpdateUser({
     id: string;
   }>;
 }) {
+  const t = await getTranslations();
   const { id } = await params;
 
   const {
@@ -19,9 +21,9 @@ export default async function UpdateUser({
   if (!user) notFound();
 
   const breadcrumbs = [
-    { label: 'Dashboard', href: '/', isHiddenOnMobile: true },
-    { label: 'Users', href: '/users' },
-    { label: 'Update' },
+    { label: t('common.navigation.dashboard'), href: '/', isHiddenOnMobile: true },
+    { label: t('common.navigation.users.list'), href: '/users' },
+    { label: t('common.navigation.users.update') },
   ];
 
   return (

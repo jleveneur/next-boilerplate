@@ -2,9 +2,9 @@
 
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Cross2Icon } from '@radix-ui/react-icons';
-import { useTranslations } from 'next-intl';
 import * as React from 'react';
 
+import { useButtons } from '@/hooks/translations/use-buttons';
 import { cn } from '@/lib/utils';
 
 const Dialog = DialogPrimitive.Root;
@@ -34,7 +34,7 @@ const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
 >(({ className, children, ...props }, ref) => {
-  const t = useTranslations('DialogContent');
+  const t = useButtons();
 
   return (
     <DialogPortal>

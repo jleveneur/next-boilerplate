@@ -1,7 +1,6 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -17,6 +16,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { useFeatures } from '@/hooks/translations/use-features';
 import { login, loginSchema } from '@/lib/auth';
 import { cn } from '@/lib/utils';
 
@@ -27,7 +27,7 @@ type LoginFormProps = {
 const LoginForm = ({ className }: LoginFormProps) => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const t = useTranslations('LoginForm');
+  const t = useFeatures('auth');
 
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
@@ -48,8 +48,8 @@ const LoginForm = ({ className }: LoginFormProps) => {
   return (
     <Card className={cn('flex flex-col', className)}>
       <CardHeader>
-        <CardTitle className="text-2xl">{t('title')}</CardTitle>
-        <CardDescription>{t('description')}</CardDescription>
+        <CardTitle className="text-2xl">{t('login.title')}</CardTitle>
+        <CardDescription>{t('login.description')}</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -60,7 +60,7 @@ const LoginForm = ({ className }: LoginFormProps) => {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('email')}</FormLabel>
+                    <FormLabel>{t('login.form.fields.email')}</FormLabel>
                     <FormControl>
                       <Input {...field} placeholder="m@example.com" />
                     </FormControl>
@@ -73,7 +73,7 @@ const LoginForm = ({ className }: LoginFormProps) => {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('password')}</FormLabel>
+                    <FormLabel>{t('login.form.fields.password')}</FormLabel>
                     <FormControl>
                       <Input {...field} placeholder="" type="password" />
                     </FormControl>
@@ -83,7 +83,7 @@ const LoginForm = ({ className }: LoginFormProps) => {
               />
               {errorMessage && <div className="text-destructive">{errorMessage}</div>}
               <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? t('loading') : t('submit')}
+                {isLoading ? t('login.form.loading') : t('login.form.submit')}
               </Button>
             </div>
           </form>

@@ -12,7 +12,6 @@ import {
   type SortingState,
   useReactTable,
 } from '@tanstack/react-table';
-import { useTranslations } from 'next-intl';
 import * as React from 'react';
 
 import { DataTablePagination } from '@/components/data-table-pagination';
@@ -25,6 +24,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { useFeatures } from '@/hooks/translations/use-features';
 
 import { DeleteUserDialog } from './delete-user-dialog';
 import { getColumns } from './users-table-columns';
@@ -35,7 +35,7 @@ interface UsersTableProps {
 }
 
 export function UsersTable({ data }: UsersTableProps) {
-  const t = useTranslations('Users.components.UsersTable');
+  const t = useFeatures('users');
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
   const [selectedUser, setSelectedUser] = React.useState<User | null>(null);
@@ -95,7 +95,7 @@ export function UsersTable({ data }: UsersTableProps) {
             ) : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-24 text-center">
-                  {t('noData')}
+                  {t('list.empty_state')}
                 </TableCell>
               </TableRow>
             )}

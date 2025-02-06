@@ -1,146 +1,129 @@
 {
-  "LocaleSwitcher": {
-    "label": "Langue",
-    "en": "English",
-    "fr": "Français"
-  },
-  "LoginForm": {
-    "title": "Connexion",
-    "description": "Veuillez entrer votre email ci-dessous pour vous connecter à votre compte.",
-    "email": "Email",
-    "password": "Mot de passe",
-    "submit": "Se connecter",
-    "loading": "Connexion en cours..."
-  },
-  "ModeToggle": {
-    "toggle": "Changer de thème"
-  },
-  "NavMain": {
-    "label": "Application",
-    "dashboard": "Tableau de bord",
-    "products": "Produits"
-  },
-  "NavAdmin": {
-    "label": "Administration",
-    "settings": "Paramètres",
-    "users": "Utilisateurs",
-    "billing": "Facturation"
-  },
-  "NavProjects": {
-    "label": "Projets",
-    "view": "Voir le projet",
-    "share": "Partager le projet",
-    "delete": "Supprimer le projet",
-    "more": "Plus"
-  },
-  "NavUser": {
-    "label": "Utilisateur",
-    "upgrade": "Mettre à niveau",
-    "profile": "Profil",
-    "billing": "Facturation",
-    "notifications": "Notifications",
-    "logout": "Déconnexion"
-  },
-  "TeamSwitcher": {
-    "label": "Équipes",
-    "add": "Ajouter une équipe"
-  },
-  "BreadcrumbEllipsis": {
-    "more": "Plus de navigation"
-  },
-  "DialogContent": {
-    "close": "Fermer"
-  },
-  "SheetContent": {
-    "close": "Fermer"
-  },
-  "SidebarTrigger": {
-    "toggle": "Basculer la barre latérale"
-  },
-  "Dashboard": {
-    "breadcrumb": {
-      "dashboard": "Tableau de bord"
+  "common": {
+    "buttons": {
+      "submit": "Soumettre",
+      "cancel": "Annuler",
+      "create": "Créer",
+      "add": "Ajouter",
+      "open": "Ouvrir",
+      "search": "Rechercher",
+      "save": "Enregistrer",
+      "delete": "Supprimer",
+      "edit": "Modifier",
+      "close": "Fermer",
+      "reset": "Réinitialiser",
+      "toggle": "Basculer",
+      "more": "Plus",
+      "submitting": "Soumission en cours...",
+      "pending": "En attente..."
+    },
+    "navigation": {
+      "application": "Application",
+      "dashboard": "Tableau de bord",
+      "products": "Produits",
+      "admin": "Administration",
+      "users": {
+        "list": "Utilisateurs",
+        "create": "Créer un utilisateur",
+        "update": "Modifier un utilisateur"
+      },
+      "settings": "Paramètres"
+    },
+    "errors": {
+      "required": "{field} est requis",
+      "invalid_email": "Adresse email invalide",
+      "min_length": "{field} doit contenir au moins {count} caractères",
+      "max_length": "{field} ne doit pas dépasser {count} caractères",
+      "password_match": "Les mots de passe doivent correspondre",
+      "server_error": "Une erreur s'est produite. Veuillez réessayer plus tard."
     }
   },
-  "Users": {
-    "breadcrumb": {
-      "dashboard": "Tableau de bord",
-      "users": "Utilisateurs"
+  "components": {
+    "locale_switcher": {
+      "label": "Langue",
+      "en": "Anglais",
+      "fr": "Français"
     },
-    "title": "Utilisateurs",
-    "description": "Gérer les utilisateurs de l'application.",
-    "components": {
-      "UsersTable": {
-        "noData": "Aucun utilisateur trouvé."
+    "team_switcher": {
+      "label": "Équipes",
+      "add": "Ajouter une équipe"
+    },
+    "nav_user": {
+      "label": "Utilisateur",
+      "upgrade": "Passer à la version Pro",
+      "profile": "Profil",
+      "billing": "Facturation",
+      "notifications": "Notifications",
+      "logout": "Déconnexion"
+    },
+    "data_table_column_header": {
+      "asc": "Croissant",
+      "desc": "Décroissant"
+    },
+    "data_table_pagination": {
+      "rows_per_page": "Lignes par page",
+      "selected_rows": "{selectedRowCount} sur {totalRowCount} ligne(s) sélectionnée(s).",
+      "page_count": "Page {currentPage} sur {pageCount}",
+      "first_page": "Première page",
+      "previous_page": "Page précédente",
+      "next_page": "Page suivante",
+      "last_page": "Dernière page"
+    }
+  },
+  "features": {
+    "auth": {
+      "login": {
+        "title": "Connexion",
+        "description": "Veuillez entrer votre email ci-dessous pour vous connecter à votre compte.",
+        "form": {
+          "fields": {
+            "email": "Email",
+            "password": "Mot de passe"
+          },
+          "submit": "Se connecter",
+          "loading": "Connexion en cours..."
+        }
+      }
+    },
+    "users": {
+      "list": {
+        "title": "Utilisateurs",
+        "description": "Gérez les utilisateurs de l'application.",
+        "empty_state": "Aucun utilisateur trouvé."
       },
-      "UsersTableToolbar": {
-        "searchByEmail": "Filtrer par email...",
-        "clearFilters": "Réinitialiser",
-        "createUser": "Créer un utilisateur"
-      },
-      "UsersTableRowActions": {
-        "edit": "Modifier",
-        "delete": "Supprimer",
-        "open": "Ouvrir le menu"
-      },
-      "CreateUserForm": {
+      "create": {
         "title": "Créer un utilisateur",
-        "description": "Veuillez remplir le formulaire ci-dessous pour créer un nouvel utilisateur.",
-        "fields": {
-          "fullName": "Nom complet",
-          "email": "Email",
-          "role": "Rôle",
-          "password": "Mot de passe"
-        },
-        "admin": "Administrateur",
-        "user": "Utilisateur",
-        "submit": "Créer l'utilisateur",
-        "cancel": "Annuler",
-        "submitting": "Création en cours...",
-        "success": "Utilisateur créé avec succès!"
+        "description": "Créez un nouvel utilisateur dans l'application.",
+        "form": {
+          "fields": {
+            "full_name": "Nom complet",
+            "email": "Email",
+            "role": "Rôle",
+            "password": "Mot de passe"
+          }
+        }
       },
-      "UpdateUserForm": {
-        "title": "Modifier l'utilisateur",
-        "description": "Veuillez modifier les informations de l'utilisateur ci-dessous.",
-        "fields": {
-          "fullName": "Nom complet",
-          "email": "Email",
-          "role": "Rôle",
-          "password": "Mot de passe"
-        },
-        "admin": "Administrateur",
-        "user": "Utilisateur",
-        "submit": "Mettre à jour l'utilisateur",
-        "cancel": "Annuler",
-        "submitting": "Mise à jour en cours...",
-        "success": "Utilisateur mis à jour avec succès!"
+      "update": {
+        "title": "Modifier un utilisateur",
+        "description": "Modifiez un utilisateur existant dans l'application.",
+        "form": {
+          "fields": {
+            "full_name": "Nom complet",
+            "email": "Email",
+            "role": "Rôle"
+          }
+        }
       },
-      "DeleteUserDialog": {
-        "title": "Êtes-vous absolument sûr?",
-        "description": "Cette action est irréversible. Cela supprimera définitivement votre compte et supprimera vos données de nos serveurs.",
-        "delete": "Supprimer l'utilisateur",
-        "cancel": "Annuler",
-        "pending": "Suppression en cours..."
+      "delete": {
+        "title": "Êtes-vous absolument sûr ?",
+        "description": "Cette action est irréversible. Cela supprimera définitivement votre compte et effacera vos données de nos serveurs."
+      },
+      "common": {
+        "roles": {
+          "admin": "Administrateur",
+          "user": "Utilisateur"
+        }
       }
     }
-  },
-  "Products": {
-    "breadcrumb": {
-      "dashboard": "Tableau de bord",
-      "products": "Produits"
-    }
-  },
-  "DataTableColumnHeader": {
-    "asc": "Asc",
-    "desc": "Desc"
-  },
-  "DataTablePagination": {
-    "goToPreviousPage": "Aller à la page précédente",
-    "goToNextPage": "Aller à la page suivante",
-    "goToFirstPage": "Aller à la première page",
-    "goToLastPage": "Aller à la dernière page",
-    "rowsPerPage": "Lignes par page",
-    "selectedRows": "{selectedRowCount} sur {totalRowCount} ligne(s) sélectionnée(s).",
-    "pageCount": "Page {currentPage} sur {pageCount}"
   }
 }
