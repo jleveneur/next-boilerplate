@@ -1,13 +1,12 @@
-import { useTranslations } from 'next-intl';
-
 import { DashboardLayout } from '@/components/layouts/dashboard-layout';
+import { useNavigation } from '@/hooks/translations/use-navigation';
 
 export default function Products() {
-  const t = useTranslations('Products');
+  const t = useNavigation();
 
   const breadcrumbs = [
-    { label: t('breadcrumb.dashboard'), href: '/', isHiddenOnMobile: true },
-    { label: t('breadcrumb.products') },
+    { label: t('dashboard'), href: '/', isHiddenOnMobile: true },
+    { label: t('products') },
   ];
 
   return (

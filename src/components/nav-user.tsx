@@ -2,7 +2,6 @@
 
 import { type User } from '@supabase/supabase-js';
 import { BadgeCheck, Bell, ChevronsUpDown, CreditCard, LogOut, Sparkles } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -20,6 +19,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar';
+import { useComponents } from '@/hooks/translations/use-components';
 import { logout } from '@/lib/auth';
 
 type NavUserProps = {
@@ -27,7 +27,7 @@ type NavUserProps = {
 };
 
 const NavUser = ({ user }: NavUserProps) => {
-  const t = useTranslations('NavUser');
+  const t = useComponents('nav_user');
   const { isMobile } = useSidebar();
 
   const fullName = user.user_metadata.full_name as string;

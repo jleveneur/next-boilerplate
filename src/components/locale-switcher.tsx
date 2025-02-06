@@ -1,6 +1,6 @@
 'use client';
 
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 
 import {
   Select,
@@ -11,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { useComponents } from '@/hooks/translations/use-components';
 import { Locale, locales, setUserLocale } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
 
@@ -19,7 +20,7 @@ type LocaleSwitcherProps = {
 };
 
 const LocaleSwitcher = ({ className }: LocaleSwitcherProps) => {
-  const t = useTranslations('LocaleSwitcher');
+  const t = useComponents('locale_switcher');
   const currentLocale = useLocale();
 
   return (

@@ -4,7 +4,6 @@ import { type User } from '@supabase/supabase-js';
 import { type Row } from '@tanstack/react-table';
 import { Edit, MoreHorizontal, Trash } from 'lucide-react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -14,6 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useButtons } from '@/hooks/translations/use-buttons';
 
 interface UsersTableRowActionsProps {
   row: Row<User>;
@@ -21,7 +21,7 @@ interface UsersTableRowActionsProps {
 }
 
 export function UsersTableRowActions({ row, onDeleteClick }: UsersTableRowActionsProps) {
-  const t = useTranslations('Users.components.UsersTableRowActions');
+  const t = useButtons();
 
   return (
     <DropdownMenu>

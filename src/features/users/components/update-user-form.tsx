@@ -3,7 +3,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { type User } from '@supabase/supabase-js';
 import { useRouter } from 'next/navigation';
-import { useTranslations } from 'next-intl';
 import { useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -27,6 +26,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
+import { useButtons } from '@/hooks/translations/use-buttons';
+import { useFeatures } from '@/hooks/translations/use-features';
 import { cn } from '@/lib/utils';
 
 import { updateUser } from '../actions';
@@ -39,7 +40,8 @@ type UpdateUserFormProps = {
 
 const UpdateUserForm = ({ user, className }: UpdateUserFormProps) => {
   const [isSubmitting, startTransition] = useTransition();
-  const t = useTranslations('Users.components.UpdateUserForm');
+  const t = useFeatures('users');
+  const buttons = useButtons();
   const router = useRouter();
 
   const form = useForm<UpdateUserFormData>({
@@ -56,7 +58,7 @@ const UpdateUserForm = ({ user, className }: UpdateUserFormProps) => {
       const { success, message } = await updateUser(user.id, values);
 
       if (success) {
-        toast.success(t('success'));
+        toast.success(message);
         router.push('/users');
       } else {
         toast.error(message);
@@ -66,8 +68,8 @@ const UpdateUserForm = ({ user, className }: UpdateUserFormProps) => {
 
   return (
     <div className={cn('mx-auto max-w-2xl', className)}>
-      <h1 className="mb-4 text-3xl font-semibold">{t('title')}</h1>
-      <p className="text-muted-foreground">{t('description')}</p>
+      <h1 className="mb-4 text-3xl font-semibold">{t('update.title')}</h1>
+      <p className="text-muted-foreground">{t('update.description')}</p>
       <Separator className="my-6" />
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -76,7 +78,7 @@ const UpdateUserForm = ({ user, className }: UpdateUserFormProps) => {
             name="fullName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t('fields.fullName')}</FormLabel>
+                <FormLabel>{t('update.form.fields.full_name')}</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="John Doe" />
                 </FormControl>
@@ -89,7 +91,7 @@ const UpdateUserForm = ({ user, className }: UpdateUserFormProps) => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t('fields.email')}</FormLabel>
+                <FormLabel>{t('update.form.fields.email')}</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="m@example.com" />
                 </FormControl>
@@ -102,7 +104,7 @@ const UpdateUserForm = ({ user, className }: UpdateUserFormProps) => {
             name="role"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t('fields.role')}</FormLabel>
+                <FormLabel>{t('update.form.fields.role')}</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
@@ -111,8 +113,8 @@ const UpdateUserForm = ({ user, className }: UpdateUserFormProps) => {
                   </FormControl>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectItem value="user">{t('user')}</SelectItem>
-                      <SelectItem value="admin">{t('admin')}</SelectItem>
+                      <SelectItem value="user">{t('common.roles.user')}</SelectItem>
+                      <SelectItem value="admin">{t('common.roles.admin')}</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
@@ -121,10 +123,10 @@ const UpdateUserForm = ({ user, className }: UpdateUserFormProps) => {
             )}
           />
           <Button type="submit" className="w-full" disabled={isSubmitting}>
-            {isSubmitting ? t('submitting') : t('submit')}
+            {isSubmitting ? buttons('submitting') : buttons('submit')}
           </Button>
           <Button variant="outline" className="w-full" type="button" onClick={router.back}>
-            {t('cancel')}
+            {buttons('cancel')}
           </Button>
         </form>
       </Form>

@@ -1,6 +1,5 @@
 import { type Column } from '@tanstack/react-table';
 import { ArrowDown, ArrowUp, ChevronsUpDown } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -9,6 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useComponents } from '@/hooks/translations/use-components';
 import { cn } from '@/lib/utils';
 
 interface DataTableColumnHeaderProps<TData, TValue> extends React.HTMLAttributes<HTMLDivElement> {
@@ -43,7 +43,7 @@ export function DataTableColumnHeader<TData, TValue>({
   title,
   className,
 }: DataTableColumnHeaderProps<TData, TValue>) {
-  const t = useTranslations('DataTableColumnHeader');
+  const t = useComponents('data_table_column_header');
 
   // If the column cannot be sorted, just display the title
   if (!column.getCanSort()) {
