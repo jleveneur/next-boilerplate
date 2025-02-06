@@ -40,7 +40,6 @@
   },
   "components": {
     "locale_switcher": {
-      "label": "Language",
       "en": "English",
       "fr": "Français"
     },
@@ -68,6 +67,11 @@
       "previous_page": "Previous page",
       "next_page": "Next page",
       "last_page": "Last page"
+    },
+    "user_preferences": {
+      "label": "Preferences",
+      "language": "Language",
+      "dark_mode": "Dark Mode"
     }
   },
   "features": {

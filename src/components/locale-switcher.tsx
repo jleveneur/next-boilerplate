@@ -7,7 +7,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
@@ -25,12 +24,11 @@ const LocaleSwitcher = ({ className }: LocaleSwitcherProps) => {
 
   return (
     <Select onValueChange={(locale: Locale) => setUserLocale(locale)} defaultValue={currentLocale}>
-      <SelectTrigger className={cn('w-[120px]', className)}>
+      <SelectTrigger className={cn('h-7 w-[100px]', className)}>
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>{t('label')}</SelectLabel>
           {locales.map((locale) => (
             <SelectItem key={locale} value={locale}>
               {t(locale)}
