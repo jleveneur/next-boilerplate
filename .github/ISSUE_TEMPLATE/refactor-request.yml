@@ -1,0 +1,64 @@
+name: 🛠 Refactor Request
+description: Request code refactoring or improvement
+title: "[REFACTOR] "
+labels: ["refactor"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a refactor! Please fill out this form to help us understand what needs to be improved.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What part of the codebase needs improvement? Why?
+      placeholder: Describe the current state and why it needs refactoring...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: goals
+    attributes:
+      label: Goal
+      description: What are you hoping to achieve with this refactor?
+      options:
+        - label: Improve readability
+        - label: Reduce complexity
+        - label: Optimize performance
+        - label: Align with architecture standards
+        - label: Other (please specify in additional notes)
+
+  - type: textarea
+    id: proposed-changes
+    attributes:
+      label: Proposed Changes
+      description: What specific changes do you propose?
+      placeholder: |
+        - [ ] Change A
+        - [ ] Change B
+        - [ ] Change C
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: What impact will this refactor have?
+      placeholder: |
+        - Will this change affect existing features?
+        - Any risk of breaking changes?
+        - Performance implications?
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Additional Notes
+      description: Any additional context, references, related issues, or diagrams.
+      placeholder: Optional additional information...
+    validations:
+      required: false
